@@ -8,7 +8,7 @@ const Deals = () => {
         <h1 className="font-bold text-2xl text-gray-700 mb-8">
           Hot Deals of the Day – Don’t Miss Out!
         </h1>
-        <ul className="grid grid-cols-1 md:grid-cols-2   lg:grid-cols-4 gap-3">
+        <ul className="grid grid-cols-1 md:grid-cols-2   lg:grid-cols-4 gap-3 p-3">
           <li className="  bg-white shadow-sm rounded-lg  xs:p-5">
             <div>
               <img
@@ -27,7 +27,7 @@ const Deals = () => {
             </div>
           </li>
 
-          <li className="bg-white shadow-sm rounded-lg xs:p-5">
+          <li className="bg-white shadow-sm rounded-lg ">
             <div>
               <img
                 src="https://res.cloudinary.com/dec2rowhi/image/upload/v1763286920/e-img6_dypxym_c4a06d.jpg"
@@ -84,43 +84,7 @@ const Deals = () => {
       </div>
    
 
-      {/* <div className="w-full container grid grid-cols-1 md:grid-cols-2  xs:gap-3 mx-auto px-4 py-8 my-8">
-        <div className="bg-white p-6 rounded shadow-lg py-8 flex flex-col justify-center items-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">
-            Why Hyper Mart?
-          </h2>
-          <ul className="space-y-3 text-gray-700 text-[16px]">
-            <li className="flex items-center gap-3 mb-3">
-              <FaShoppingCart style={{ color: "#f39c12" }} />
-              <span className="font-semibold">Wide product range</span> – All
-              categories in one place
-            </li>
-            <li className="flex items-center gap-3 mb-3">
-              <FaBolt style={{ color: "#f39c12" }} />
-              <span className="font-semibold">Fast delivery</span> – Quick &
-              reliable service
-            </li>
-            <li className="flex items-center gap-3 mb-3">
-              <FaTags style={{ color: "#f39c12" }} />
-              <span className="font-semibold">Affordable prices</span> – Daily
-              deals & special offers
-            </li>
-            <li className="flex items-center gap-3 mb-3">
-              <FaStar style={{ color: "#f39c12" }} />
-              <span className="font-semibold">Quality guarantee</span> – Trusted
-              brands & verified products
-            </li>
-            <li className="flex items-center gap-3">
-              <FaLock style={{ color: "#f39c12" }} />
-              <span className="font-semibold">Secure checkout</span> – Safe &
-              fast payments
-            </li>
-          </ul>
-        </div>
-        <div className="">
-<img src="https://res.cloudinary.com/dec2rowhi/image/upload/v1763362827/banner_gfkpdp.png" alt="" className="rounded-lg w-full h-full object-contain" />
-        </div>
-      </div> */}
+      
     </div>
   );
 };
