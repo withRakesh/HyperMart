@@ -1,13 +1,17 @@
-# netlify.toml
+# netlify.toml (MUST be in the HYPER MART root folder)
 
-# 1. SET THE BASE DIRECTORY
-# This tells Netlify which folder contains the files to be deployed and served.
 [build]
-  publish = "client" # Change this to your client-side folder name
+  # 1. BASE: Tells Netlify to change into the 'client' directory before running commands.
+  base = "client"
+  
+  # 2. COMMAND: The script to run (from client/package.json) to generate the production build.
+  command = "npm run build"
+  
+  # 3. PUBLISH: The folder where the built files (like index.html) are saved.
+  # This is the default Vite output location *relative to the base*.
+  publish = "dist"
 
-# 2. CONFIGURE THE REDIRECTS
-# This handles the client-side routing for your Single Page Application (SPA).
-# It redirects all requests to your main index.html file.
+# 4. REDIRECTS: Handles client-side routing.
 [[redirects]]
   from = "/*"
   to = "/index.html"
