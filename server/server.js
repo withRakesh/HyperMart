@@ -27,3 +27,5 @@ app.listen(process.env.PORT ||  5000, () =>
 );
 
 console.log("MONGO_URI:", process.env.MONGO_URI);
+
+console.log(process.env.MONGO_URI)

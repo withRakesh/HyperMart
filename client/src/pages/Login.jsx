@@ -22,7 +22,7 @@ const Login = () => {
       }
 
       const res = await axios.post(
-        "https://hypermart-a9z7.onrender.com/api/auth/login",
+        "https://hypermart-rsyi.onrender.com/api/auth/login",
         user
       );
       console.log(res.data);
