@@ -65,13 +65,7 @@ const Banner = () => {
             alt="Hyper Mart Banner"
             className="w-full h-full object-cover"
           />
-
-          {/* Text overlay */}
-          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-black/40 px-5 py-2 rounded-md">
-            <p className="text-white text-sm ">
-              STYLE THAT SPEAKS BEFORE YOU DO
-            </p>
-          </div>
+    
         </div>
 
       </div>
