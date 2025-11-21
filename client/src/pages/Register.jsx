@@ -19,7 +19,7 @@ const handleSubmit = async (e) => {
       return
     }
 
-    const res = await axios.post('https://hypermart-rsyi.onrender.com/api/auth/register', user)
+    const res = await axios.post('https://localhost:5000/api/auth/register', user)
     console.log(res.data)
     setUser({ name: '', email: '', password: '' })
     alert('Registered successfully!')
