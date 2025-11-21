@@ -50,7 +50,7 @@ const Navbar = () => {
         {/* Right Section */}
         <div className="flex items-center gap-3" ref={dropdownRef}>
           {/* Theme Toggle */}
-          <button
+          {/* <button
             onClick={toggleTheme}
             className="p-2 rounded-full bg-white dark:bg-gray-800 transition"
           >
@@ -59,7 +59,7 @@ const Navbar = () => {
             ) : (
               <FaMoon className="text-gray-800 w-4 h-4" />
             )}
-          </button>
+          </button> */}
           <button className="p-2 rounded-full bg-white text-black text-gray-600">
             <FaUser/>
           </button>
