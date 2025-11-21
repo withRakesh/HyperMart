@@ -1,0 +1,14 @@
+# netlify.toml
+
+# 1. SET THE BASE DIRECTORY
+# This tells Netlify which folder contains the files to be deployed and served.
+[build]
+  publish = "client" # Change this to your client-side folder name
+
+# 2. CONFIGURE THE REDIRECTS
+# This handles the client-side routing for your Single Page Application (SPA).
+# It redirects all requests to your main index.html file.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
