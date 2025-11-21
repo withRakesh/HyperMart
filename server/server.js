@@ -9,9 +9,11 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-   origin: "https://hypermartapp.netlify.app",
+  origin: "https://hypermartapp.netlify.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
+
 app.use(express.json());
 
 app.use('/api/auth', authRoutes)
