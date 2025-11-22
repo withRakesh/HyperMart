@@ -22,7 +22,7 @@ const Login = () => {
       }
 
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://hypermart-ysoc.onrender.com/api/auth/login",
         user
       );
       console.log(res.data);
