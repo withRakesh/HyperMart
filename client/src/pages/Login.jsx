@@ -22,7 +22,7 @@ const Login = () => {
       }
 
       const res = await axios.post(
-        "https://localhost:5000/api/auth/login",
+        "http://localhost:5000/api/auth/login",
         user
       );
       console.log(res.data);
