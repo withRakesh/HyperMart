@@ -17,19 +17,20 @@ router.get('/products', async (req, res) => {
 })
 
 // GET SINGLE PRODUCT
-router.get('/:id', async (req, res)=> {
-    try{
-        const singleProduct = await product.findById(req.params.id);
+router.get('/products/:id', async (req, res) => {
+  try {
+    const singleProduct = await product.findById(req.params.id);
 
-        if(!singleProduct){
-            res.status(500).json({message: 'product not found'})
-        }
-
-        res.status(200).json(singleProduct);
-    }catch(err){
-        res.status(400).json({message: 'server error', error: err})
-
+    if (!singleProduct) {
+      return res.status(404).json({ message: "Product not found" });
     }
-})
+
+    res.status(200).json(singleProduct);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 
 module.exports = router;

@@ -8,6 +8,8 @@ import Fashion from './pages/Fashion'
 import Electronics from './pages/Electronics'
 import Beauty from './pages/Beauty'
 import Kitchen from './pages/Kitchen'
+import ProductDetails from './pages/ProductDetails'
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
         <Route path='/electronics' element={<Electronics/>}></Route>
         <Route path='/beauty' element={<Beauty/>}></Route>
         <Route path='/kitchen' element={<Kitchen/>}></Route>
+         <Route path="/product/:id" element={<ProductDetails />} />
       </Routes>
     </Router>
   )
