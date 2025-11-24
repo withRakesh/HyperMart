@@ -14,29 +14,56 @@ const Kitchen = () => {
   }, []);
 
   return (
-    <div className='bg-[#f8f9fa]'>
+    <div className='bg-[#f8f9fa] min-h-screen'>
       <Navbar />
 
-      <div className='py-5 px-4'>
-        <ul className='grid grid-cols-2 md:grid-cols-3 gap-5 '>
+      <div className='py-5 px-3 md:px-6 lg:px-10'>
+        <ul className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-6'>
           {products.map((item, index) => (
-            <li key={index} className='p-5   bg-white rounded-lg hover:shadow-md duration-200    lg:w-full '>
+            <li 
+              key={index} 
+              className='p-4 bg-white rounded-lg hover:shadow-lg duration-300'
+            >
               <Link to={`/product/${item._id}`}>
-                <img src={item.image} alt={item.name} className='rounded-md w-full lg:h-36 lg:object-cover  '  />
-                <p className='text-gray-500 text-xs py-1'>{item.category}</p>
-                <p className='font-semibold text-gray-700 text-sm'>{item.name}</p>
-                <p className='text-sm text-gray-500 truncate'>{item.description}</p>
+                
+                {/* Product Image */}
+                <img 
+                  src={item.image} 
+                  alt={item.name} 
+                  className='rounded-md w-full h-28 sm:h-32 md:h-36 lg:h-40 xl:h-44 object-cover'
+                />
 
-                <div className='flex w-full justify-between mt-2'>
-                  <p className='text-sm font-medium text-gray-700'>
-                    ₹ {item.price} <span className='text-gray-500 text-xs'>{item.unit}</span>
+                {/* Category */}
+                <p className='text-gray-500 text-[10px] sm:text-xs pt-1 leading-tight'>
+                  {item.category}
+                </p>
+
+                {/* Name */}
+                <p className='font-semibold text-gray-700 text-xs sm:text-sm leading-snug'>
+                  {item.name}
+                </p>
+
+                {/* Description */}
+                <p className='text-[11px] sm:text-sm text-gray-500 truncate leading-snug'>
+                  {item.description}
+                </p>
+
+                {/* Price & Rating */}
+                <div className='flex justify-between items-center mt-2'>
+                  <p className='text-[11px] sm:text-sm font-medium text-gray-700'>
+                    ₹ {item.price} 
+                    <span className='text-gray-500 text-[10px]'> {item.unit}</span>
                   </p>
-                  <p className='text-sm text-gray-600'>
-                    <span className='text-gray-400'>Rating </span>⭐ {item.rating}
+                  <p className='text-[11px] sm:text-sm text-gray-600'>
+                    ⭐ {item.rating}
                   </p>
                 </div>
 
-                <p className='text-gray-700 text-xs mt-1'>Stock: {item.stock}</p>
+                {/* Stock */}
+                <p className='text-gray-700 text-[10px] sm:text-xs mt-1'>
+                  Stock: {item.stock}
+                </p>
+
               </Link>
             </li>
           ))}
