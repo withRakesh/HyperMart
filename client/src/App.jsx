@@ -13,7 +13,7 @@ import Cart from "./pages/Cart";
 import Categories from "./components/Categories";
 import Banner from "./components/Banner";
 import Contact from "./components/Contact";
-import Profile from "./pages/profile";
+import Profile from "./pages/Profile";
 import Layout from "./pages/Layout";
 
 function App() {
