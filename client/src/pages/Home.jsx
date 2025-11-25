@@ -10,8 +10,8 @@ import Footer from '../components/Footer'
 
 const Home = () => {
   return (
-    <div className='bg-[#f8f9fa] h-auto'>
-      <Navbar/>
+    <div className='bg-[#f8f9fa] h-auto' id='home'>
+    
       <SearchBox />
       <ImageSlider />
       <Categories />

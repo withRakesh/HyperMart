@@ -18,7 +18,7 @@ const icons = [
 
 const Categories = () => {
   return (
-    <div className="container w-full mx-auto px-4 py-8 mb-5">
+    <div className="container w-full mx-auto px-4 py-8 mb-5" id="categories">
       <div className="heading">
         <h1 className="font-bold  text-2xl text-gray-700 mb-5 py-2">
           Categories

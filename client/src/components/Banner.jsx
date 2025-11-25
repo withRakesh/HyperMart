@@ -31,7 +31,7 @@ const benefits = [
 
 const Banner = () => {
   return (
-    <div className="w-full max-w-screen-xl mx-auto px-4 pb-5   ">
+    <div className="w-full max-w-screen-xl mx-auto px-4 pb-5 py-5  " id="about">
       <div className="grid md:grid-cols-2 bg-white shadow-xl rounded-xl overflow-hidden">
         
         {/* LEFT CONTENT */}

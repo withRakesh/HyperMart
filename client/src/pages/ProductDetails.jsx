@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -15,6 +15,21 @@ const ProductDetails = () => {
 
   if (!product) return <p className="text-center mt-10">Loading...</p>;
 
+  const addToCart = (item) => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const exists = cart.find((p) => p._id === item._id);
+
+    if (exists) {
+      exists.quantity += 1;
+    } else {
+      cart.push({ ...item, quantity: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("product add to cart");
+  };
+
   return (
     <div className="bg-[#f8f9fa] min-h-screen">
       <Navbar />
@@ -29,7 +44,9 @@ const ProductDetails = () => {
 
         {/* Details */}
         <div>
-          <h2 className="text-2xl font-semibold text-gray-800">{product.name}</h2>
+          <h2 className="text-2xl font-semibold text-gray-800">
+            {product.name}
+          </h2>
           <p className="text-gray-500 text-sm mt-2">{product.description}</p>
 
           <p className="text-xl font-bold mt-4 text-[#0a0a0a]">
@@ -38,11 +55,15 @@ const ProductDetails = () => {
           </p>
 
           <p className="mt-2 text-gray-600">⭐ {product.rating}</p>
-          <p className="mt-1 text-gray-700">Stock: {product.stock}</p>
+          <p className="mt-1 mb-4 text-gray-700">Stock: {product.stock}</p>
 
-          <button className="mt-5 bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700">
+          <Link
+            to={"/cart"}
+            onClick={() => addToCart(product)}
+            className="mt-5 bg-blue-600 text-white px-5 py-2  rounded-lg hover:bg-blue-700"
+          >
             Add to Cart
-          </button>
+          </Link>
         </div>
       </div>
 

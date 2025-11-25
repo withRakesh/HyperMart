@@ -8,7 +8,7 @@ import {
 
 const Contact = () => {
   return (
-    <div className="w-full max-w-screen-xl mx-auto px-4 py-10">
+    <div className="w-full max-w-screen-xl mx-auto px-4 py-10" id="contact">
       {/* Page Title */}
       <h1 className="text-3xl font-bold text-gray-800 mb-8 text-start">
         Contact
