@@ -49,7 +49,7 @@ try{
   // generate jwt
   const token = jwt.sign({id: user._id, email: user.email}, process.env.SECRET_KEY, {expiresIn: '1h'});
 
-  res.status(200).json({message: 'Login successfully', token, user:{id: user._id ,email: user.email, userName: user.username}})
+  res.status(200).json({message: 'Login successfully', token, user:{id: user._id ,email: user.email, userName: user.username, createdAt: user.createdAt }})
 
 }catch(err){
   res.status(500).json({message: 'server error', error: err.message})

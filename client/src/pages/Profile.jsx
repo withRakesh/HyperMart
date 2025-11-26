@@ -1,8 +1,29 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Profile = () => {
+  
+  const [user, setUser] = useState(null)
+
+  useEffect(()=>{
+    const userInfo = localStorage.getItem('user');
+
+    if(userInfo){
+      setUser(JSON.parse(userInfo));
+    }
+ 
+
+  }, []);
+
+  
+  if (!user) {
+    return <p className="text-center text-xl">Loading...</p>;
+  }
+
+
   return (
     <div className="bg-[#f8f9fa] min-h-screen">
       <div className="max-w-5xl mx-auto px-4 py-6">
@@ -14,16 +35,16 @@ const Profile = () => {
 
           <div className="grid sm:grid-cols-2 gap-4">
             <p>
-              <span className="font-semibold">Name:</span> Rakesh Kumar
+              <span className="font-semibold">Name: </span>{user.userName}
             </p>
             <p>
-              <span className="font-semibold">Email:</span> rakesh@example.com
+              <span className="font-semibold">Email: </span>{user.email}
             </p>
             <p>
               <span className="font-semibold">Phone:</span> +91 9876543210
             </p>
             <p>
-              <span className="font-semibold">Joined On:</span> 12 Jan 2025
+              <span className="font-semibold">Joined On:</span>{new Date(user.createdAt).toLocaleDateString()}
             </p>
           </div>
 
