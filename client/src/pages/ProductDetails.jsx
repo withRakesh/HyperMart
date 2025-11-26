@@ -32,13 +32,13 @@ const ProductDetails = () => {
 
   return (
     <div className="bg-[#f8f9fa] min-h-screen">
-      <Navbar />
+       <h1 className="text-xl font-bold text-gray-700 py-5 text-center ">Product Details</h1>
+      <div className="px-6 py-7 flex flex-col bg-white md:flex-row gap-6 justify-center">
 
-      <div className="px-6 py-8 flex flex-col md:flex-row gap-6 justify-center">
         {/* Image */}
         <img
           src={product.image}
-          className="w-full md:w-96 h-72 rounded-lg object-cover"
+          className="w-full md:w-96 h-72 rounded-lg shadow-sm object-cover"
           alt={product.name}
         />
 
@@ -58,16 +58,15 @@ const ProductDetails = () => {
           <p className="mt-1 mb-4 text-gray-700">Stock: {product.stock}</p>
 
           <Link
+
             to={"/cart"}
             onClick={() => addToCart(product)}
-            className="mt-5 bg-blue-600 text-white px-5 py-2  rounded-lg hover:bg-blue-700"
+            className="mt-5 bg-[#3EB0E8] text-white px-5 py-2  rounded-lg hover:bg-[#1F8CCB]"
           >
             Add to Cart
           </Link>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };

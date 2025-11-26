@@ -23,9 +23,86 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 shadow-sm bg-[#57C2F2] text-white py-5 flex justify-between items-center px-4">
-      {/* Logo */}
-      <h1 className="font-bold text-[20px]">HYPER MART</h1>
+    <nav className="sticky top-0 z-50 shadow-sm bg-[#1F8CCB] text-white py-5 flex justify-between items-center px-4">
+      <div ref={dropdownRef}>
+        
+        {/* Mobile Menu Icon */}
+        <div className="flex gap-3">
+          <button className="md:hidden" onClick={() => setOpen(!open)}>
+            <FaBars className="text-white w-8 h-8" />
+          </button>
+
+          {/* Logo */}
+          <h1 className="text-2xl font-extrabold tracking-wide">
+            HYPER <span className="text-yellow-300">MART</span>
+          </h1>
+        </div>
+
+        {/* Mobile Dropdown */}
+        {open && (
+          <div className="absolute top-[70px] left-0 bg-white rounded-lg h:md-screen shadow-lg md:hidden w-sm">
+            <ul className="flex flex-col text-center text-black">
+              <Link
+                to="/"
+                className="py-3 w-full flex justify-center  "
+                onClick={() => setOpen(false)}
+              >
+                <div className="p-3 bg-[lightgray] rounded-full text-white">
+                  <FaUser></FaUser>
+                </div>
+              </Link>
+              <hr className="w-50 mx-auto text-[lightgray] mb-1" />
+              <Link
+                to="/"
+                className="py-3 hover:bg-gray-100"
+                onClick={() => setOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                to="/categories"
+                className="py-3 hover:bg-gray-100"
+                onClick={() => setOpen(false)}
+              >
+                Categories
+              </Link>
+              <Link
+                to="/orders"
+                className="py-3 hover:bg-gray-100"
+                onClick={() => setOpen(false)}
+              >
+                Orders
+              </Link>
+              <Link
+                to="/cart"
+                className="py-3 hover:bg-gray-100"
+                onClick={() => setOpen(false)}
+              >
+                Cart
+              </Link>
+              <Link
+                to="/about"
+                className="py-3 hover:bg-gray-100"
+                onClick={() => setOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                to="/contact"
+                className="py-3 hover:bg-gray-100"
+                onClick={() => setOpen(false)}
+              >
+                Contact
+              </Link>
+              <Link
+                to="/contact"
+                className="py-3 hover:bg-gray-100"
+                onClick={() => setOpen(false)}
+              ></Link>
+            </ul>
+          </div>
+        )}
+      </div>
 
       {/* Desktop Menu */}
       <ul className="hidden md:flex gap-x-8">
@@ -50,12 +127,9 @@ const Navbar = () => {
       </ul>
 
       {/* Right Section */}
-      <div className="flex items-center gap-3" ref={dropdownRef}>
+      <div className="flex items-center gap-3">
         {/* Profile */}
-        <Link
-          to="/profile"
-          className="p-2 rounded-full bg-white text-black"
-        >
+        <Link to="/profile" className="p-2 rounded-full bg-white text-black">
           <FaUser />
         </Link>
 
@@ -66,37 +140,6 @@ const Navbar = () => {
               Login
             </button>
           </Link>
-        )}
-
-        {/* Mobile Menu Icon */}
-        <button className="md:hidden" onClick={() => setOpen(!open)}>
-          <FaBars className="text-white w-8 h-8" />
-        </button>
-
-        {/* Mobile Dropdown */}
-        {open && (
-          <div className="absolute top-[70px] right-4 bg-white rounded-lg shadow-lg md:hidden w-48">
-            <ul className="flex flex-col text-center text-black">
-              <Link to="/" className="py-3 hover:bg-gray-100">
-                Home
-              </Link>
-              <Link to="/categories" className="py-3 hover:bg-gray-100">
-                Categories
-              </Link>
-              <Link to="/orders" className="py-3 hover:bg-gray-100">
-                Orders
-              </Link>
-              <Link to="/cart" className="py-3 hover:bg-gray-100">
-                Cart
-              </Link>
-              <Link to="/about" className="py-3 hover:bg-gray-100">
-                About
-              </Link>
-              <Link to="/contact" className="py-3 hover:bg-gray-100">
-                Contact
-              </Link>
-            </ul>
-          </div>
         )}
       </div>
     </nav>

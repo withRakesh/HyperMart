@@ -5,8 +5,6 @@ import Footer from "../components/Footer";
 const Profile = () => {
   return (
     <div className="bg-[#f8f9fa] min-h-screen">
-      <Navbar />
-
       <div className="max-w-5xl mx-auto px-4 py-6">
         <h2 className="text-2xl font-bold mb-4">My Profile</h2>
 
@@ -15,10 +13,18 @@ const Profile = () => {
           <h3 className="text-lg font-semibold mb-3">Personal Information</h3>
 
           <div className="grid sm:grid-cols-2 gap-4">
-            <p><span className="font-semibold">Name:</span> Rakesh Kumar</p>
-            <p><span className="font-semibold">Email:</span> rakesh@example.com</p>
-            <p><span className="font-semibold">Phone:</span> +91 9876543210</p>
-            <p><span className="font-semibold">Joined On:</span> 12 Jan 2025</p>
+            <p>
+              <span className="font-semibold">Name:</span> Rakesh Kumar
+            </p>
+            <p>
+              <span className="font-semibold">Email:</span> rakesh@example.com
+            </p>
+            <p>
+              <span className="font-semibold">Phone:</span> +91 9876543210
+            </p>
+            <p>
+              <span className="font-semibold">Joined On:</span> 12 Jan 2025
+            </p>
           </div>
 
           <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
@@ -55,7 +61,10 @@ const Profile = () => {
             <p className="font-semibold">Order ID: HM-982134</p>
             <p>Date: 15 Feb 2025</p>
             <p>Items: 3</p>
-            <p>Status: <span className="text-green-600 font-semibold">Delivered</span></p>
+            <p>
+              Status:{" "}
+              <span className="text-green-600 font-semibold">Delivered</span>
+            </p>
             <p>Total: ₹ 1,420</p>
             <button className="mt-2 text-blue-600 underline">View Order</button>
           </div>
@@ -64,7 +73,10 @@ const Profile = () => {
             <p className="font-semibold">Order ID: HM-982120</p>
             <p>Date: 10 Feb 2025</p>
             <p>Items: 2</p>
-            <p>Status: <span className="text-yellow-600 font-semibold">Pending</span></p>
+            <p>
+              Status:{" "}
+              <span className="text-yellow-600 font-semibold">Pending</span>
+            </p>
             <p>Total: ₹ 899</p>
             <button className="mt-2 text-blue-600 underline">View Order</button>
           </div>
@@ -73,7 +85,9 @@ const Profile = () => {
         {/* Wishlist */}
         <div className="bg-white p-5 rounded-xl shadow mb-5">
           <h3 className="text-lg font-semibold mb-3">Wishlist</h3>
-          <p className="text-gray-600">You haven't added any products to your wishlist yet.</p>
+          <p className="text-gray-600">
+            You haven't added any products to your wishlist yet.
+          </p>
         </div>
 
         {/* Account Settings */}
@@ -81,9 +95,15 @@ const Profile = () => {
           <h3 className="text-lg font-semibold mb-3">Account Settings</h3>
 
           <ul className="space-y-2">
-            <li className="text-blue-600 underline cursor-pointer">Change Password</li>
-            <li className="text-blue-600 underline cursor-pointer">Manage Notifications</li>
-            <li className="text-red-600 underline cursor-pointer">Delete Account</li>
+            <li className="text-blue-600 underline cursor-pointer">
+              Change Password
+            </li>
+            <li className="text-blue-600 underline cursor-pointer">
+              Manage Notifications
+            </li>
+            <li className="text-red-600 underline cursor-pointer">
+              Delete Account
+            </li>
           </ul>
         </div>
 
@@ -94,8 +114,6 @@ const Profile = () => {
           </button>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };

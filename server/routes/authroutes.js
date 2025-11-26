@@ -37,10 +37,15 @@ router.post("/register", async (req, res) => {
 // LOGIN-ROUTE
 router.post('/login', async (req, res) => {
 try{
-  const {email, password} = req.body;
+  const {email, password, username} = req.body;
+ 
+  
 
   const user =  await User.findOne({email});
   if(!user) return res.status(404).json({message: 'User not found'});
+
+  const userName = await User.findOne({username});
+  if(!userName) return res.status(404).json({message:'username not found'});
 
   const isMatch = await bcrypt.compare(password, user.password);
   if(!isMatch)return res.status(400).json({message: 'Invalid credentials'});
@@ -48,7 +53,7 @@ try{
   // generate jwt
   const token = jwt.sign({id: user._id, email: user.email}, process.env.SECRET_KEY, {expiresIn: '1h'});
 
-  res.status(200).json({message: 'Login successfully', token, user:{id: user._id ,email: user.email,}})
+  res.status(200).json({message: 'Login successfully', token, user:{id: user._id ,email: user.email, userName: user.username}})
 
 }catch(err){
   res.status(500).json({message: 'server error', error: err.message})

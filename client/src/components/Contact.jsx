@@ -48,23 +48,39 @@ const Contact = () => {
       {/* Contact Form + Map */}
       <div className="grid md:grid-cols-2 gap-8">
         {/* Working Hours */}
-        <div className=" bg-[#57C2F2]   rounded-xl p-6  flex items-center justify-center gap-3">
-          <div>
-            <h3 className="text-lg font-bold text-white">
-              Working Hours
-            </h3>
-            <div className="grid grid-cols-2">
-              <div>
-                <p className="text-white">Mon – Sat </p>
-                <p className="text-white">Sunday</p>
-              </div>
-              <div className="">
-                <p className="text-white"> 9:00 AM – 9:00 PM</p>
-                <p className="text-white"> 10:00 AM – 6:00 PM</p>
-              </div>
-            </div>
-          </div>
-        </div>
+<div className="bg-white shadow-sm rounded-xl p-6">
+  <div className="flex items-center gap-4 mb-4">
+    <div className="p-3 bg-blue-100 rounded-full">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="2"
+        stroke="currentColor"
+        className="w-6 h-6 text-blue-600"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 6v6l4 2m5-2a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    </div>
+    <h3 className="text-xl font-semibold text-gray-800">Working Hours</h3>
+  </div>
+
+  <div className="space-y-3 text-gray-700 text-base">
+    <div className="flex justify-between">
+      <span>Mon – Sat</span>
+      <span>9:00 AM – 9:00 PM</span>
+    </div>
+    <div className="flex justify-between">
+      <span>Sunday</span>
+      <span>10:00 AM – 6:00 PM</span>
+    </div>
+  </div>
+</div>
+
 
         {/* Google Map */}
         <div className="rounded-xl overflow-hidden shadow-xl h-80">
