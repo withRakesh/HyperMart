@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 
-const productSchema = new mongoose.Schema(
+const kitchenSchema = new mongoose.Schema(
   {
     name: {
       type: String,
       required: true,
     },
     image: {
-      type: [String], // array of image URLs
+      type: String,
       required: true,
     },
     category: {
@@ -36,7 +36,12 @@ const productSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-
+    rating: {
+      type: Number,
+      default: 0,  
+      min: 0,
+      max: 5,
+    },
     createdAt: {
       type: Date,
       default: Date.now,
@@ -45,4 +50,4 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("products", productSchema);
+module.exports = mongoose.model("kitchen", kitchenSchema);

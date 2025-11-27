@@ -32,7 +32,7 @@ router.get("/products/:id", async (req, res) => {
 });
 
 //Store products in database
-router.post("/products", async (req, res) => {
+router.post("/kitchen/product", async (req, res) => {
   try {
     const {
       name,
