@@ -17,6 +17,7 @@ app.use(express.json());
 
 app.use('/api/auth', authRoutes)
 app.use('/api/get',  productRoutes)
+app.use('/api/post',  productRoutes)
 
 mongoose
   .connect(process.env.MONGO_URI)

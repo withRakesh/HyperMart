@@ -1,23 +1,23 @@
-const product = require('../models/products');
-const express = require('express');
+const product = require("../models/products");
+const express = require("express");
 const router = express.Router();
 
 // GET ALL PRODUCT
-router.get('/products', async (req, res) => {
-    try{
-        const products = await product.find();
-        if(!products){
-            res.status(500).json({message: 'No products'})
-        }
-
-        res.status(200).json(products);
-    }catch(err){
-        res.status(400).json({error : err.message})
+router.get("/products", async (req, res) => {
+  try {
+    const products = await product.find();
+    if (!products) {
+      res.status(500).json({ message: "No products" });
     }
-})
+
+    res.status(200).json(products);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
 
 // GET SINGLE PRODUCT
-router.get('/products/:id', async (req, res) => {
+router.get("/products/:id", async (req, res) => {
   try {
     const singleProduct = await product.findById(req.params.id);
 
@@ -31,6 +31,49 @@ router.get('/products/:id', async (req, res) => {
   }
 });
 
+//Store products in database
+router.post("/products", async (req, res) => {
+  try {
+    const {
+      name,
+      image,
+      category,
+      subCategory,
+      price,
+      unit,
+      description,
+      stock,
+    } = req.body;
 
+    if (
+      !name ||
+      !image ||
+      !category ||
+      !subCategory ||
+      !price ||
+      !unit ||
+      !description ||
+      !stock
+    ) {
+      return res.status(400).json({ message: "fill all feilds" });
+    }
+
+    const newProduct = new product({
+      name,
+      image,
+      category,
+      subCategory,
+      price,
+      unit,
+      description,
+      stock,
+    });
+
+    await newProduct.save();
+    res.status(200).json({message: 'product added successfully'})
+  } catch (err) {
+    res.status(400).json({ message: "server error", err });
+  }
+});
 
 module.exports = router;
