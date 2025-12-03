@@ -7,7 +7,7 @@ const Kitchen = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://hypermart-fqba.onrender.com/api/get/products")
+    fetch("https://hypermart-fqba.onrender.com/api/get/Kitchenproducts")
       .then((res) => res.json())
       .then((json) => {
         setProducts(json);
