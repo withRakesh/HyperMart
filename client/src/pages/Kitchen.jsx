@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
 const Kitchen = () => {
@@ -8,7 +6,7 @@ const Kitchen = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://hypermart-fqba.onrender.com/api/get/products")
+    fetch("https://hypermart-fqba.onrender.com/api/get/Kitchenproducts")
       .then((res) => res.json())
       .then((json) => {
         setProducts(json);
@@ -34,7 +32,7 @@ const Kitchen = () => {
               key={index}
               className="p-4 bg-white rounded-lg hover:shadow-lg duration-300"
             >
-              <Link to={`/product/${item._id}`}>
+              <Link to={`/kitchenproducts/${item._id}`}>
                 {/* Product Image */}
                 <img
                   src={item.image}

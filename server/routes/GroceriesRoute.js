@@ -1,11 +1,12 @@
-const Kitchenproduct = require("../models/Kitchen");
+ 
 const express = require("express");
 const router = express.Router();
+ const GroceriesProduct = require('../models/Groceries')
 
 // GET ALL PRODUCT
-router.get("/kitchenproducts", async (req, res) => {
+router.get("/Groceriesproducts", async (req, res) => {
   try {
-    const products = await  Kitchenproduct.find();
+    const products = await    GroceriesProduct.find();
     if (!products) {
       res.status(500).json({ message: "No products" });
     }
@@ -17,9 +18,9 @@ router.get("/kitchenproducts", async (req, res) => {
 });
 
 // GET SINGLE PRODUCT
-router.get("/kitchenproducts/:id", async (req, res) => {
+router.get("/Groceriesproducts/:id", async (req, res) => {
   try {
-    const singleProduct = await Kitchenproduct.findById(req.params.id);
+    const singleProduct = await   GroceriesProduct.findById(req.params.id);
 
     if (!singleProduct) {
       return res.status(404).json({ message: "Product not found" });
@@ -32,7 +33,7 @@ router.get("/kitchenproducts/:id", async (req, res) => {
 });
 
 //Store kitchen products in database
-router.post("/kitchenproducts", async (req, res) => {
+router.post("/Groceriesproducts", async (req, res) => {
   try {
     const {
       name,
@@ -60,7 +61,7 @@ router.post("/kitchenproducts", async (req, res) => {
       return res.status(400).json({ message: "fill all feilds" });
     }
 
-    const newProduct = new Kitchenproduct({
+    const newProduct = new  GroceriesProduct({
       name,
       image,
       category,

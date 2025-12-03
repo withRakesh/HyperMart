@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const kitchenSchema = new mongoose.Schema(
+const  ElectronicSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -50,4 +50,7 @@ const kitchenSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("kitchen", kitchenSchema);
+module.exports = mongoose.model("Electronic", ElectronicSchema);
+
+
+ 
