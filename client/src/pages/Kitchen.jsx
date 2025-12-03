@@ -33,7 +33,7 @@ const Kitchen = () => {
               key={index}
               className="p-4 bg-white rounded-lg hover:shadow-lg duration-300"
             >
-              <Link to={`/products/${item._id}`}>
+              <Link to={`/Kitchenproducts/${item._id}`}>
                 {/* Product Image */}
                 <img
                   src={item.image}
