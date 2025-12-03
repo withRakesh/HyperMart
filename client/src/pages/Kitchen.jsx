@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+ 
 import { Link } from "react-router-dom";
 
 const Kitchen = () => {
@@ -6,7 +7,7 @@ const Kitchen = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://hypermart-fqba.onrender.com/api/get/Kitchenproducts")
+    fetch("https://hypermart-fqba.onrender.com/api/get/products")
       .then((res) => res.json())
       .then((json) => {
         setProducts(json);
@@ -32,7 +33,7 @@ const Kitchen = () => {
               key={index}
               className="p-4 bg-white rounded-lg hover:shadow-lg duration-300"
             >
-              <Link to={`/kitchenproducts/${item._id}`}>
+              <Link to={`/products/${item._id}`}>
                 {/* Product Image */}
                 <img
                   src={item.image}
