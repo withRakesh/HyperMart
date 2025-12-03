@@ -15,6 +15,7 @@ import Banner from "./components/Banner";
 import Contact from "./components/Contact";
 import Profile from "./pages/Profile";
 import Layout from "./pages/Layout";
+import ElectronicProductDetails from "./pages/ElectronicProductDetails";
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
           <Route path="/beauty" element={<Beauty />}></Route>
           <Route path="/kitchen" element={<Kitchen />}></Route>
           <Route path="/Kitchenproduct/:id" element={<ProductDetails />} />
-          <Route path="/Electronicproduct/:id" element={<ProductDetails />} />
+          <Route path="/Electronicproduct/:id" element={<ElectronicProductDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/about" element={<Banner />} />
