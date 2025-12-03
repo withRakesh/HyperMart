@@ -99,6 +99,10 @@ const Cart = () => {
                 >
                   Delete Cart
                 </button>
+                
+                <Link to={'/order'}>
+                <button>Place order</button>
+                </Link>
               </div>
             ))}
 

@@ -19,6 +19,7 @@ import ElectronicProductDetails from "./pages/ElectronicProductDetails";
 import FationProductDetails from "./pages/FationProductDetails";
 import GroceriesProductDetails from "./pages/GroceriesProductDetails";
 import BeautyProductDetails from "./pages/BeautyProductDetails";
+import Order from "./pages/Order";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/about" element={<Banner />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/order" element={<Order />} />
         </Route>
       </Routes>
     </Router>
