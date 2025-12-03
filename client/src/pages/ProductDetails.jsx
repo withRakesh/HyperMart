@@ -6,7 +6,7 @@ const ProductDetails = () => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    fetch(`https://hypermart-fqba.onrender.com/api/get/products/${id}`)
+    fetch(`https://hypermart-fqba.onrender.com/api/get/Kitchenproducts/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);
