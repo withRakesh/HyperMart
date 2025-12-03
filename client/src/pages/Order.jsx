@@ -15,15 +15,17 @@ const Order = () => {
   };
 
   const placeOrder = () => {
+
+    
     alert("Order Placed Successfully 🎉");
   };
 
   return (
-    <div className="p-6 max-w-3xl mx-auto font-sans">
+    <div className="p-6 max-w-3xl mx-auto  ">
       <h1 className="text-3xl font-bold mb-6">🛍️ Order Summary</h1>
 
       {/* Delivery Details */}
-      <div className="bg-white shadow-lg rounded-2xl p-6 mb-6 border">
+      <div className="bg-white shadow-lg rounded-2xl p-6 mb-6  ">
         <h2 className="text-xl font-semibold mb-4">Delivery Details</h2>
 
         <div className="grid gap-4">
@@ -32,14 +34,14 @@ const Order = () => {
             name="name"
             placeholder="Full Name"
             onChange={handleChange}
-            className="border p-3 rounded-xl w-full"
+            className="border border-gray-300 p-3 rounded-xl w-full"
           />
 
           <textarea
             name="address"
             placeholder="Full Address"
             onChange={handleChange}
-            className="border p-3 rounded-xl w-full"
+            className="border border-gray-300 p-3 rounded-xl w-full"
           />
 
           <input
@@ -47,16 +49,16 @@ const Order = () => {
             name="phone"
             placeholder="Phone Number"
             onChange={handleChange}
-            className="border p-3 rounded-xl w-full"
+            className="border border-gray-300 p-3 rounded-xl w-full"
           />
         </div>
       </div>
 
       {/* Payment */}
-      <div className="bg-white shadow-lg rounded-2xl p-6 mb-6 border">
+      <div className="bg-white shadow-lg rounded-2xl p-6 mb-6  ">
         <h2 className="text-xl font-semibold mb-4">💳 Payment Method</h2>
 
-        <label className="flex items-center gap-3 p-3 border rounded-xl">
+        <label className="flex items-center gap-3 p-3 border border-gray-300 rounded-xl">
           <input
             type="radio"
             name="payment"
@@ -67,7 +69,7 @@ const Order = () => {
           Cash On Delivery
         </label>
 
-        <label className="flex items-center gap-3 p-3 border rounded-xl mt-3">
+        <label className="flex items-center gap-3 p-3 border-gray-300 border rounded-xl mt-3">
           <input
             type="radio"
             name="payment"
@@ -80,7 +82,7 @@ const Order = () => {
       </div>
 
       {/* Delivery Info */}
-      <div className="bg-white shadow-lg rounded-2xl p-6 border">
+      <div className="bg-white shadow-lg rounded-2xl p-6  ">
         <h2 className="text-xl font-semibold mb-4">🚚 Delivery Info</h2>
 
         <p className="text-gray-600">Estimated Delivery: <strong>2–4 Days</strong></p>

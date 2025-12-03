@@ -67,13 +67,6 @@ const Navbar = () => {
                 Categories
               </Link>
               <Link
-                to="/orders"
-                className="py-3 hover:bg-gray-100"
-                onClick={() => setOpen(false)}
-              >
-                Orders
-              </Link>
-              <Link
                 to="/cart"
                 className="py-3 hover:bg-gray-100"
                 onClick={() => setOpen(false)}
@@ -111,9 +104,6 @@ const Navbar = () => {
         </Link>
         <Link to="/categories">
           <li>Categories</li>
-        </Link>
-        <Link to="/orders">
-          <li>Orders</li>
         </Link>
         <Link to="/cart">
           <li>Cart</li>
