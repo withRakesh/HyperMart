@@ -16,6 +16,9 @@ import Contact from "./components/Contact";
 import Profile from "./pages/Profile";
 import Layout from "./pages/Layout";
 import ElectronicProductDetails from "./pages/ElectronicProductDetails";
+import FationProductDetails from "./pages/FationProductDetails";
+import GroceriesProductDetails from "./pages/GroceriesProductDetails";
+import BeautyProductDetails from "./pages/BeautyProductDetails";
 
 function App() {
   return (
@@ -33,6 +36,9 @@ function App() {
           <Route path="/kitchen" element={<Kitchen />}></Route>
           <Route path="/Kitchenproduct/:id" element={<ProductDetails />} />
           <Route path="/Electronicproduct/:id" element={<ElectronicProductDetails />} />
+          <Route path="/Fationproduct/:id" element={<FationProductDetails />} />
+          <Route path="/Groceriesproduct/:id" element={<GroceriesProductDetails />} />
+          <Route path="/Beautyproduct/:id" element={<BeautyProductDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/about" element={<Banner />} />
