@@ -1,7 +1,7 @@
  
 const express = require("express");
 const router = express.Router();
-const Electronic = require('../models/electronic')
+const Electronic = require('../models/Electronic')
 
 // GET ALL PRODUCT
 router.get("/Electronicproducts", async (req, res) => {
